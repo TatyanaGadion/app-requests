@@ -1,5 +1,8 @@
+<p *ngIf="!(items$ | async)">Loading...</p>
+
 <ul>
-  <li *ngFor="let item of items">
+  <!-- <li *ngFor="let item of items"> -->
+  <li *ngFor="let item of items$ | async">
     {{item.id}} | {{item.name}}
   </li>
 </ul>
